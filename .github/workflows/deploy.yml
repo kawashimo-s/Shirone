@@ -48,7 +48,7 @@ permissions:
   contents: read
 
 env:
-  # TODO: 替换为你的内容仓。
+  # 自分のコンテンツレポジトリに変更する
   CONTENT_REPOSITORY: kawashimo-s/kawashimo-web-content
   CONTENT_WORKING_COPY: .content-src
 
@@ -86,7 +86,7 @@ jobs:
           repository: ${{ env.CONTENT_REPOSITORY }}
           ref: ${{ steps.target.outputs.ref }}
           path: ${{ env.CONTENT_WORKING_COPY }}
-          # 内容仓公开时可以删掉 token 一行。
+          # プライベートレポジトリの場合は必要
           token: ${{ secrets.CONTENT_REPO_TOKEN }}
           persist-credentials: false
 
@@ -99,7 +99,7 @@ jobs:
       - name: Set up pnpm
         uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
         with:
-          version: 9.14.4
+          # version: 9.14.4
           run_install: false
 
       - name: Set up Node.js
@@ -214,9 +214,9 @@ jobs:
           {
             echo "### Shirone deploy"
             echo ""
-            echo "- 内容仓：\`${CONTENT_REPOSITORY}\`"
-            echo "- 内容 ref：\`${{ steps.target.outputs.ref }}\`"
-            echo "- 内容 commit：\`${{ steps.content.outputs.sha }}\`"
+            echo "- コンテンツ用のレポジトリ：\`${CONTENT_REPOSITORY}\`"
+            echo "- ref：\`${{ steps.target.outputs.ref }}\`"
+            echo "- commit：\`${{ steps.content.outputs.sha }}\`"
             if [ -f content.lock.json ]; then
               echo ""
               echo "<details><summary>content.lock.json</summary>"
