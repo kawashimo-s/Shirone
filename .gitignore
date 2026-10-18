@@ -85,3 +85,5 @@ artifacts/shirone-ai-*
 /src/config/FooterConfig.html
 /src/assets/images/
 /public/
+
+*.tmp
