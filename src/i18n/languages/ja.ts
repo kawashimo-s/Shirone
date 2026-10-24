@@ -308,7 +308,7 @@ export const ja: Translation = {
 		"移動したり、アーカイブされたり、そもそも存在しなかったりした可能性があります。",
 	[Key.backToHome]: "ホームへ戻る",
 	[Key.close]: "閉じる",
-	[Key.scanToRead]: "QRコードで続きを読む",
+	[Key.scanToRead]: "２次元コードで続きを読む",
 
 	[Key.reduceMotion]: "動きを減らす",
 	[Key.wallpaperMode]: "ページ背景",
